@@ -1,0 +1,74 @@
+@CHARSET "windows-1255";
+
+body{
+background-image:url('./Images/stockvault-online-shopping---devices-and-bags-with-copyspace185487.jpg');
+    
+ background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+     background-size: 1500px 1000px;
+}
+h1 {
+     color: #ff7c4d;
+     text-shadow: 2px 2px 4px #000000;
+     text-align: center;
+     
+      font: italic bold 90px/200px Georgia, serif;
+     font-weight: 700;
+    
+    
+}
+h3 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+   
+}
+label {
+   
+     color: #ff7c4d;
+     text-shadow: 2px 2px 4px #000000;
+     font-size: 180%
+}
+a{
+	color: #DAA520;
+	font-size: 150%
+	
+}
+.size{
+	
+}
+div.dimantion{
+	 height: 150px;
+    width: 600px;
+	
+}
+
+img {
+    opacity: 0.8;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+input[type=radio]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+  color: #DAA520;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.radiotext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+   color: #DAA520;
+}
+
+
+
+

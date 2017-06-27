@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="companyApp">
+<head>
+     
+      <link href="CssFiles/AlertStyle.css" rel="stylesheet" >
+        <link href="CssFiles/CompanySPA.css" rel="stylesheet" >
+       <link href="CssFiles/Carusela.css" rel="stylesheet" >
+
+   
+<meta charset="windows-1255">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="./angular (1).js"></script>
+<script src="./bootstrap.js"></script>
+<script src="./angular-ui-router.js"></script>
+<script src="./CompanyServices/RouteForCompany.js"></script>
+	<script src="./CompanyServices/CreateCouponServiceAPI.js"></script>
+		<script src="./CompanyServices/CompanyServicesAPI.js"></script>
+		<script src="./CompanyServices/ErrorService.js"></script>
+	    <script src="./CompanyControllers/GetCouponBy.js"></script>
+	    <script src="./CompanyControllers/CouponByID.js"></script>
+		<script src="./CompanyControllers/GetCponCtrl.js"></script>
+		<script src="./CompanyControllers/CreateCouponCtrl.js"></script>
+        <script src="./CompanyControllers/GetCompanyNameCtrl.js"></script>
+        <script src="./CompanyControllers/GetCompanyDetailsCtrl.js"></script>
+        <script src="./CompanyControllers/GetCouponsByEndDateCtrl.js"></script>
+        <script src="./CompanyControllers/SignOut.js"></script>
+         <script src="./CompanyControllers/Messages.js"></script>
+          <script src="./CompanyControllers/Guide.js"></script>
+        
+        
+<title>Company</title>
+
+  </head>
+  <body class="bodyPic img-responsive" >
+   <div ng-controller="RouteCtor as r"> </div>
+  
+    <div ng-controller="GetNameCtrl as ctrl">
+   
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">Coup-ON</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a> {{ctrl.name}}</a></li>
+      </ul> 
+       <ul class="nav navbar-nav ">
+        
+         <li> <a role="button" ng-click="ctrl.clintInfo()">
+        <span class="glyphicon glyphicon-info-sign"></span>  User guide</a>
+          
+         </li>
+      </ul>  
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li ng-controller="SginOutCtrl as ctrl"> <a role="button" ng-click="ctrl.signOut()"
+         href="http://localhost:8080/CouponWebSystem/Index.html">
+        <span class="glyphicon glyphicon-log-out "></span> Sign out</a>
+          
+         </li>
+      </ul>  
+    </div> 
+  </div> 
+</nav>
+
+       <guide guide-info="ctrl.guideInfo" alert-message="ctrl.clintInfo()"></guide>   
+   
+        <h1 class="styler" >Hi {{ctrl.name}}</h1>
+       
+                <h1 class="styler" >Welcome To Coup-ON</h1>
+ 
+  
+             
+
+      
+       <div class="col-md-6">
+       <div class="media">
+       <div class="media-left">
+       <h3 > <a role="button" ui-sref="menue" class="list-group-item active">Main Menu</a></h3>
+       <a role="button" ui-sref="CreateCoupon" class="list-group-item">Add New Coupon</a>
+       <br>       
+       <a role="button" ui-sref="myCouponCompany" class="list-group-item">My Coupons</a>
+       <br>
+       <a role="button" ui-sref="CouponBy" class="list-group-item">Get Coupon By Type</a>
+       <br>
+       <a role="button" ui-sref="CouponByID" class="list-group-item">Get Coupon By ID</a>
+       <br>
+       <a role="button" ui-sref="GetCouponsByEndDate" class="list-group-item">Get Coupons Up To Expiration Date </a>
+       <br>
+       <a role="button" ui-sref="GetCompanyDetails" class="list-group-item">My Personal Information</a>
+       <br>
+      
+      	 </div>
+       </div>
+     </div>
+   </div>
+ 
+          <div ui-view></div>
+          
+         
+</body>
+</html>

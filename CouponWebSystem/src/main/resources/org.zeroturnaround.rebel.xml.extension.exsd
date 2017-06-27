@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.zeroturnaround.eclipse" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.zeroturnaround.eclipse" id="org.zeroturnaround.rebel.xml.extension" name="org.zeroturnaround.rebel.xml.extension"/>
+      </appInfo>
+      <documentation>
+         Defines the extension interface for rebel.xml file contributions.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="rebel-xml-path-contributor" minOccurs="0" maxOccurs="1"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="rebel-xml-path-contributor">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.zeroturnaround.eclipse.actions.extension.IRebelXmlContributor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         1.4.8
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         Example definition:
+&lt;[CDATA[
+&lt;extension
+  id=&quot;rebel.xml.contributor&quot;
+  name=&quot;myRebelXmlContributor&quot;
+  point=&quot;org.zeroturnaround.rebel.xml.extension&quot;&gt;
+  &lt;client class=&quot;rebel.xml.contributor.PathsProvider&quot;&gt;&lt;/client&gt;
+&lt;/extension&gt;
+]]&gt;
+
+Example implementation:
+
+public class PathsProvider implements IRebelXmlContributor {
+ public List&lt;String&gt; getPaths() {
+  return Arrays.asList(&quot;C:/Temp&quot;);
+ }
+}
+
+public class PathsProvider implements IRebelXmlContributor {
+
+  public PathsProvider() {}
+
+  public List&lt;RebelClasspathEntry&gt; getClasspathEntries(IProject project) {
+	return Arrays.asList(
+	  new RebelClasspathEntry(&quot;C:/Temp&quot;, RebelClasspathEntry.Type.DIR),
+	  new RebelClasspathEntry(&quot;C:/Temp1&quot;, RebelClasspathEntry.Type.JAR).excludes(&quot;*/**&quot;),
+	  new RebelClasspathEntry(&quot;C:/Temp2&quot;, RebelClasspathEntry.Type.DIR).includes(&quot;*/**&quot;)
+    );
+  }
+
+  public List&lt;RebelWebEntry&gt; getWebPathEntries(IProject project) {
+    return Arrays.asList(
+	  new RebelWebEntry(&quot;C:/web1&quot;).contextPath(&quot;/&quot;).contextPath(&quot;web1&quot;).includes(&quot;*/**&quot;),
+	  new RebelWebEntry(&quot;C:/web2&quot;).contextPath(&quot;/&quot;).contextPath(&quot;web2&quot;).includes(&quot;*/**&quot;)
+    );
+  }
+		
+}
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         The contributor should implement org.zeroturnaround.eclipse.actions.IRebelXmlContributor interface
+
+For classpath entries use RebelClasspathEntry and implement IRebelXmlContributor#getClasspathEntries
+
+For web entries use RebelWebEntry and implement IRebelXmlContributor#getWebPathEntries
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         no supplied implementations provided
+      </documentation>
+   </annotation>
+
+
+</schema>

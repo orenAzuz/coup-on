@@ -1,0 +1,4 @@
+ID,COMP_NAME,PASSWORD,EMAIL
+120,PizzaFace                                                                                           ,mushrooms                                                                                           ,pFace@gmail.co.il                                                                                   
+121,kley_zemer                                                                                          ,kley1                                                                                               ,kley@gmail.co.il                                                                                    
+122,marom                                                                                               ,guitar                                                                                              ,maro@gmail.com                                                                                      

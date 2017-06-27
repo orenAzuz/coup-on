@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+    
+         
+         
+		<div  ng-controller="CreateCouponCtrl as c">
+		
+      <messages success= "c.successMessage" err="c.errorMessage" 
+        alert-message="c.alertMessage()"></messages>
+		
+		 <div class="media-right">
+		<h3 class="textColor">Add a new coupon</h3>
+		<form class="form-horizontal" ng-submit=" c.create() ">
+		
+		<div class="form-group" >
+		<label for="name" >Title:</label >
+		
+		<input type="text" class="form-control" placeholder="Enter title"
+		ng-model="c.couponToSend.title" required pattern="[^'\x22]+" spellcheck="true"
+		maxlength="60">
+		</div>
+		<div class="form-group" >
+		<label for="name" >Start Date:</label >
+         <div id="1" value= {{c.couponToSend.startDate}}></div>
+		<input id="datefield" type="date" min="2017-06-21" class="form-control" ng-model="c.couponToSend.startDate" required>
+		</div>
+		<div class="form-group" >
+		<label for="name" >Expired Date:</label >
+
+		<input id="endDatefield" type="date" min='1899-01-01' class="form-control" ng-model="c.couponToSend.endDate" required/>
+		</div> 
+		<div class="form-group" >
+		<label for="name" >Amount:</label >
+
+		<input type="number" class="form-control" placeholder="Enter the amaount for this coupon"
+		 ng-model="c.couponToSend.amount" min="1" max="1000"  required/>
+		    </div>
+		<div class="form-group" >
+		<label for="name" >Select Type:</label >
+
+		<select ng-model="c.couponToSend.type" 
+		class="form-control" required>
+		      <option value="">Please select a type For your new coupon</option>
+              <option value="RESTURANTS">RESTURANTS</option>
+              <option value="ELECTRICITY">ELECTRICITY</option>	
+	          <option value="FOOD">FOOD</option>
+              <option value="HELTH">HELTH</option>
+              <option value="SPORT">SPORT</option>
+              <option value="CAMPING">CAMPING</option>
+              <option value="TRAVELLING">TRAVELLING</option>
+              <option value="WEBSITE_STOR">WEBSITE_STOR</option>
+              <option value="MUSIC_INSTRUMENTS">MUSIC_INSTRUMENTS</option>   
+         </select>
+		</div>
+		<div class="form-group" >
+		<label for="name" >Price:</label >
+
+		<input type="number" step="0.01"  min="0.5" class="form-control" placeholder="Enter price"
+		 ng-model="c.couponToSend.price" required/>
+		 </div>
+		 <div class="form-group" >
+		 <label for="name" >Image:</label >
+		<input id="inputFileToLoad" type="file" on-change="img" class="form-control"  placeholder="Image" required/>
+		
+		</div>
+		<div class="form-group" >
+		<label for="" >Message:</label >
+		<input type="text" class="form-control" placeholder="Enter Message" ng-model="c.couponToSend.massage"
+		pattern="[^'\x22]+" maxlength="180" spellcheck="true" required/>
+		</div>
+		<button class="btn btn-success" >Save</button>
+		<div id="imgSend" ng-model="c.couponToSend.image"></div>
+		</form>
+	
+       
+       </div>
+       </div>
+       
+       
+   
+       
+</body>
+</html>

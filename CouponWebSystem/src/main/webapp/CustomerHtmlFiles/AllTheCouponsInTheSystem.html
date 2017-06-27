@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+  
+   <h2 class="textColor">All The Coupons In Coupon World</h2>
+   
+   
+        <messages success= "all.successMessage" err="all.errorMessage" info="all.infoMessage" 
+            alert-message="all.alertMessage()"></messages>
+       
+     
+      
+        <div class="col-lg-6">
+      <div class="form-group" >
+       <p>
+  
+		<select ng-model="test.type" 
+		class="form-control">
+		    <option value="">Please Choose a coupon type to search</option>
+              <option value="RESTURANTS">RESTURANTS</option>
+              <option value="ELECTRICITY">ELECTRICITY</option>	
+	          <option value="FOOD">FOOD</option>
+              <option value="HELTH">HELTH</option>
+              <option value="SPORT">SPORT</option>
+              <option value="CAMPING">CAMPING</option>
+              <option value="TRAVELLING">TRAVELLING</option>
+              <option value="WEBSITE_STOR">WEBSITE_STOR</option>
+              <option value="MUSIC_INSTRUMENTS">MUSIC_INSTRUMENTS</option> 
+         </select>
+		
+         <input class="form-control" type="text" ng-model="test.title" placeholder="Filter Coupons According To Title">
+       <input class="form-control" type="text" ng-model="test.price" placeholder="Filter Coupons According To Price">   
+           
+       
+       </p>
+       </div>
+       
+
+    
+    
+<div class="container " >
+
+  <div class="panel-group col-lg-6" id="accordion"  >
+    <div class="panel" ng-repeat="coupon in all.coupons | filter:test:match "  >
+      <div class="panel-heading" >
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{coupon.id}}"
+              class="imgContainer btn-group btn-group-justified"
+              ng-click="all.getCouponData(coupon.id)" >
+                
+     
+     <label class="topleft"> {{coupon.title}}</label>
+   
+		<img class="imgSize img-responsive" alt="Cinque Terre"  data-ng-src={{coupon.image}}>
+		
+		
+    <span class="caret"></span></a>
+        </h4>
+      </div>
+      <div id={{coupon.id}} class="panel-collapse collapse">
+        <div class="panel-body">
+         <form id="formLogin" class="form container-fluid"  data-spy="affix" data-offset-top="205" >
+         
+            <div>
+             <h4> Coupon Details:</h4>
+            </div>
+           
+          <div>
+       <label>Title : </label>
+			            <span>{{all.couponData.title}}</span>
+			            </div>
+                           
+                         <div>  
+                 <label>Start date : </label>
+			             <span>{{all.couponData.startDate | date}}</span>
+			              </div>
+			              <div>  
+			              <label>Expired Date : </label>
+			             <span >{{all.couponData.endDate | date}}</span>
+			                 </div>  
+			                 
+			           <div>        
+      <label>Amount : </label>
+			             <span>{{all.couponData.amount}}</span>
+			              </div>  
+			                <div>  
+       <label>Type : </label>
+			             <span>{{all.couponData.type}}</span>
+			              </div>  
+			                <div>  
+      <label>Massage :</label>
+			             <span>{{all.couponData.massage}}</span>
+			              </div>  
+			                <div>  
+      <label>Price : </label>
+			             <span >{{all.couponData.price}}</span>
+			               </div>  
+		
+			              
+			          <button type="button" class="btn btn-success" ng-click="all.purchase()">
+			          <span class="glyphicon glyphicon-shopping-cart"></span> Purchase</button>
+
+    
+          </form>
+        
+        
+        
+        </div>
+      </div>
+    </div>
+   
+  </div> 
+</div>
+    
+        </div>
+
+
+</body>
+</html>

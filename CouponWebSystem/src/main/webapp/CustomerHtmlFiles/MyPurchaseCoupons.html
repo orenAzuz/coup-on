@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+       <messages  err="my.errorMessage" info="my.infoMessage" 
+            alert-message="my.alertMessage()"></messages>
+      
+        <div class="col-md-6">
+     <h3 class="textColor">My Coupons</h3>
+<div class="container " >
+
+  <div class="panel-group col-md-6" id="accordion"  >
+    <div class="panel panel-default" ng-repeat="coupon in my.coupons | filter:test:match "  >
+      <div class="panel-heading" >
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{coupon.id}}"
+              class="imgContainer btn-group btn-group-justified btn btn-default"
+              ng-click="my.getCouponData(coupon.id)" >
+                
+     
+     <label class="topleft"> {{coupon.title}}</label>
+   
+		<img class="imgSize img-responsive" alt="Cinque Terre" width="304" height="236" data-ng-src={{coupon.image}}>
+		
+		
+    <span class="caret"></span></a>
+        </h4>
+      </div>
+      <div id={{coupon.id}} class="panel-collapse collapse">
+        <div class="panel-body">
+         <form id="formLogin" class="form container-fluid"  data-spy="affix" data-offset-top="205" >
+         
+            <div>
+             <h4> Coupon Details:</h4>
+            </div>
+           
+          <div>
+       <label>Title : </label>
+			            <span>{{my.couponData.title}}</span>
+			            </div>
+                           
+                         <div>  
+                 <label>Start date : </label>
+			             <span>{{my.couponData.startDate | date}}</span>
+			              </div>
+			              <div>  
+			              <label>Expired Date : </label>
+			             <span >{{my.couponData.endDate | date}}</span>
+			                 </div>  
+			                 
+			           <div>        
+      <label>Amount : </label>
+			             <span>{{my.couponData.amount}}</span>
+			              </div>  
+			                <div>  
+       <label>Type : </label>
+			             <span>{{my.couponData.type}}</span>
+			              </div>  
+			                <div>  
+      <label>Message :</label>
+			             <span>{{my.couponData.massage}}</span>
+			              </div>  
+			                <div>  
+      <label>Price : </label>
+			             <span >{{my.couponData.price}}</span>
+			               </div>  
+		
+			           
+
+    
+          </form>
+        
+        
+        
+        </div>
+      </div>
+    </div>
+   
+  </div> 
+</div>
+     </div>
+
+
+</body>
+</html>

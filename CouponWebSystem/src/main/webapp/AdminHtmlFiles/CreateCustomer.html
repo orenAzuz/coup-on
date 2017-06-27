@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+     
+            
+               
+   <messages success= "ctrl.successMessage" err="ctrl.errorMessage" 
+     alert-message="ctrl.alertMessage()"></messages>
+            
+
+      <div class="media-right">
+	 
+	 <h3 class="textColor">Create Customer</h3>
+	 
+		<form class="form-horizontal" ng-submit="ctrl.createCusrtomer()">
+		
+		<div class="form-group" >
+		<label class="textColor" for="name" >Name:</label >
+	     <input class="form-control" placeholder="Enter Name"
+	      type="text" ng-model="ctrl.customer.custName" required pattern="[^'\x22]+"/>
+	      </div>
+		 <div class="form-group" >
+		<label class="textColor" for="name" >Password:</label >:
+		 <input class="form-control" placeholder="Enter Password"
+		  type="text" ng-model="ctrl.customer.password" pattern="[^'\x22]{4,}"
+		   required title="Must contain at least 4 or more characters""/>
+		 </div>
+		
+		 <button class="btn btn-success" >Save</button>
+		 </form>
+		</div>
+	
+      
+        
+         
+</body>
+</html>

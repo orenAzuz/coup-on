@@ -1,0 +1,49 @@
+@CHARSET "windows-1255";
+
+
+
+
+     body.bodyPic{
+      background-image:url('./Images/stockvault-business-meeting-and-teamwork-concept181308.jpg');
+      
+        	  background-repeat: no-repeat;
+    		background-attachment: fixed;
+ 	 	 
+   	 	
+         }
+         
+   .imgContainer {
+    position: relative;
+}  
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px; 
+}
+
+
+   img.imgSize{
+   
+      height: 200px;
+    width: 450px;
+   
+   }      
+   
+     .textColor{
+      font-weight: 600;
+     text-shadow: 2px 2px 4px #000000;
+    color: #40E0D0;
+   
+   }     
+   
+   h1.styler{
+   font-weight: 600;
+   text-shadow: 2px 2px 4px #000000;
+    color : #40E0D0;
+    text-align: center;
+     text-decoration: underline;
+     font-size: 300%;
+}
+   
+   

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+       <messages  err="get.errorMessage" info="get.infoMessage" 
+            alert-message="get.alertMessage()"></messages>
+ 
+        <div class="col-md-6">
+        
+       <h3 class="textColor"> My Coupons Filtered By Price: </h3> 
+        
+   
+      <div class="form-group" >
+       <form class="form-horizontal" ng-submit="get.getCouponByPrice()"> 
+   	 <input type="number"  class="form-control" placeholder="Enter price" ng-model="get.price" required/>
+   	 <br>
+   			 <button class="btn btn-success" type="submit">Search</button>
+   			 </form>
+  				 </div>
+   
+    
+<div class="container " >
+
+  <div class="panel-group col-md-6" id="accordion"  >
+    <div class="panel panel-default" ng-repeat="coupon in get.coupons | filter:test:match "  >
+      <div class="panel-heading" >
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{coupon.id}}"
+              class="imgContainer btn-group btn-group-justified"
+              ng-click="get.getCouponData($index)" >
+                
+     
+     <label class="topleft"> {{coupon.title}}</label>
+   
+		<img class="imgSize img-responsive" alt="Cinque Terre" width="304" height="236" data-ng-src={{coupon.image}}>
+		
+		
+    <span class="caret"></span></a>
+        </h4>
+      </div>
+      <div id={{coupon.id}} class="panel-collapse collapse">
+        <div class="panel-body">
+         <form id="formLogin" class="form container-fluid"  data-spy="affix" data-offset-top="205" >
+         
+            <div>
+             <h4> Coupon Details:</h4>
+            </div>
+           
+          <div>
+       <label>Title : </label>
+			            <span>{{get.couponData.title}}</span>
+			            </div>
+                           
+                         <div>  
+                 <label>Start date : </label>
+			             <span>{{get.couponData.startDate | date}}</span>
+			              </div>
+			              <div>  
+			              <label>Expired Date : </label>
+			             <span >{{get.couponData.endDate | date}}</span>
+			                 </div>  
+			                 
+			           <div>        
+      <label>Amount : </label>
+			             <span>{{get.couponData.amount}}</span>
+			              </div>  
+			                <div>  
+       <label>Type : </label>
+			             <span>{{get.couponData.type}}</span>
+			              </div>  
+			                <div>  
+      <label>Message :</label>
+			             <span>{{get.couponData.massage}}</span>
+			              </div>  
+			                <div>  
+      <label>Price : </label>
+			             <span >{{get.couponData.price}}</span>
+			               </div>  
+		
+			              
+			      
+
+    
+          </form>
+        
+        
+        
+        </div>
+      </div>
+    </div>
+   
+  </div> 
+</div>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+	<head>
+	
+	<link rel="stylesheet" href="CssFiles/AdminSPA.css"></link>
+		<meta charset="windows-1255">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link href="CssFiles/AlertStyle.css" rel="stylesheet" >
+          <link href="CssFiles/Carusela.css" rel="stylesheet" >
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./angular (1).js"></script>
+	 <script src="./angular-ui-router.js"></script>
+    <script src="./bootsrapForAdmin.js"></script>
+    <script src="./AdminServices/RouterForAdmin.js"></script>
+    <script src="./AdminServices/AdminServicesAPI.js"></script>
+     <script src="./AdminServices/ErrorService.js"></script>
+    <script src="./AdminControllers/CreateCompanyCtrl.js"></script>
+     <script src="./AdminControllers/CreateCustomerCtrl.js"></script>
+     <script src="./AdminControllers/AllTheCompanies.js"></script>
+     <script src="./AdminControllers/AllTheCustomers.js"></script>
+     <script src="./AdminControllers/GetCustomerByIDCtrl.js"></script>
+     <script src="./AdminControllers/GetCompanyByIDCtrl.js"></script>
+     <script src="./AdminControllers/SignOut.js"></script>
+     <script src="./AdminControllers/Messages.js"></script>
+      <script src="./AdminControllers/Guide.js"></script>
+       <script src="./AdminControllers/InfoCtrl.js"></script>
+    
+     
+    
+     
+     
+    
+		<script src="./AdminSpaJS.js" type="text/javascript"></script>
+		<title>Admin</title>
+	</head>
+
+<body class="bodyPic" ng-click="ctrl.toggleCouponDivMode()">
+     
+      <div ng-controller="RouteCtor as r"></div>
+      <div ng-controller="InfoCtrl as ctrl">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">Coup-ON</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a>Administrator</a></li>
+      </ul> 
+       <ul class="nav navbar-nav ">
+        
+         <li> <a role="button" ng-click="ctrl.clintInfo()">
+        <span class="glyphicon glyphicon-info-sign"></span>  User guide</a>
+          
+         </li>
+      </ul>  
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+         <li ng-controller="SginOutCtrl as ctrl"> <a role="button" ng-click="ctrl.signOut()"
+         href="http://localhost:8080/CouponWebSystem/Index.html">
+        <span class="glyphicon glyphicon-log-out "></span> Sign out</a>
+          
+         </li>
+      </ul>  
+    </div> 
+  </div> 
+</nav>
+         
+            <guide guide-info="ctrl.guideInfo" alert-message="ctrl.clintInfo()"></guide>   
+
+       <div class="col-md-6">
+       <div class="media">
+       <div class="media-left">
+       <h3> <a role="button" ui-sref="main" class="list-group-item active">Main Menu</a></h3>
+       <br>
+       <a role="button" ui-sref="AllTheCompanies" class="list-group-item">All The Companies In The System</a>
+       <br>
+       <a role="button" ui-sref="AllTheCustomers" class="list-group-item">All The Customers In The System</a>
+       <br>
+       <a role="button" ui-sref="CreateCompany" class="list-group-item">Add Company</a>
+       <br>
+       <a role="button" ui-sref="CreateCustomer" class="list-group-item">Add Customer</a>
+       <br>
+       <a role="button" ui-sref="GetCustomerByID" class="list-group-item">Get Customer By ID</a>
+       <br>
+       <a role="button" ui-sref="GetCompanyByID" class="list-group-item">Get Company By ID</a>
+       </div>
+       </div>
+       </div>
+       </div>
+        <div ui-view></div>
+
+</body>
+</html>

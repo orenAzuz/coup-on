@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+                <div  class="alert alert-success alert-dismissable fade in  aStyle " 
+   ng-if="success"><label>{{success}}</label>
+   <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   </div>
+   
+   <div class="alert alert-danger alert-dismissable fade in aStyle" 
+       ng-if="err"><label>{{err}}</label>
+       <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+      
+      <div class="alert alert-info alert-dismissable fade in aStyle" 
+       ng-if="info"><label>{{info}}</label>
+       <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+          
+      
+      
+       <div class="alert alert-warning  aStyle" 
+            ng-if="remove">
+            <strong>Warning! </strong>{{remove}}
+            <button ng-click="confirm()">Confirm</button>
+            <button ng-click="alertMessage()">Cancel</button>
+            </div>
+             
+
+</body>
+</html>

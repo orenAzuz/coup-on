@@ -1,0 +1,34 @@
+@CHARSET "windows-1255";
+
+
+div.couponShow {
+  
+   position: fixed;  
+  
+    margin-top: -5em;
+    margin-left: -20em;
+    z-index:9000;
+  
+  
+}
+
+  body.bodyPic{
+      background-image:url('./Images/stockvault-a-boss-at-the-desk178134.jpg');
+      
+      background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+     background-size: 1500px 1000px;
+         }
+         
+   img.imgSize{
+   
+      height: 80px;
+    width: 300px;
+   
+   } 
+   
+   .textColor{
+    color: #DAA520;
+   
+   }     

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+            <div class="alert alert-info alert-dismissable fade in aStyle" 
+       ng-if="guideInfo"><label> Hi dear customer:</label>
+       
+     
+
+  
+  <p> All coupons in the system will be shown with the purchase option.</p>
+  <p>You can sort them by type, price,or title. to see all coupons again Clear the fields.</p>
+<strong>Purchase:</strong>
+<p> Will be executed if you have not purchased the coupon in the past,</p>
+<p> if it is in stock and if the starting date from today.</p>
+<p>If a coupon with an expiration date is found in the past, it can not be purchased</p>
+<strong>My coupons: </strong>
+<p> You can view the coupons you purchased and their details</p>
+<strong>Filter my coupons by date or by price :</strong>
+<p> You can see my coupons up to the selected date or up to the price level you enter</p>
+   <strong>Sign out</strong>
+<p> Secure port,on purpose that no one can take action without sign in the system.</p>
+<p>Located at the top right</p>    
+       
+      
+       <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+          
+
+</body>
+</html>

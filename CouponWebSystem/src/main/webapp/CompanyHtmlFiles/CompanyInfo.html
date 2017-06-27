@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+            <div class="alert alert-info alert-dismissable fade in aStyle" 
+       ng-if="guideInfo"><label> Hi dear company:</label>
+       
+     
+<br>
+  
+ <strong> Coupon Creation:</strong>
+<p>To create a coupon, you must fill out all fields</p>
+<strong> Note !</strong><p>The title field will appear on the image in the customer display pen </p>
+<p>The Start Date field must be at least from today.</p> 
+<p>The Expiration Date field must be at least 5 days from the start date.</p>
+ <p>If the start date is over the 24th of the month, the expiration date will be 6 next month.</p>
+<strong>My coupons:</strong> 
+<p>The company's coupons will be displayed. They can be filtered by title and ID</p>
+<strong> Coupon Search by ID:</strong>
+<p>Must enter into the search field an exact ID corresponding to the coupon belonging to the company.</p>
+<strong>Get coupon up to expiration date:</strong>
+<p>Filter coupons up to the date entered in the field</p>
+<p> Will return all coupons if there are according to the date entered.</p>
+<strong>Update and delete coupon:</strong>
+<p>Update coupon information You can update the expiration date and coupon price of the coupon</p>
+<strong>Please note</strong>
+<p> that the update date can only be five days from the start or day date if the start date is earlier than today</p>
+<p>it can only be five days from now. </p>
+<strong>Note ! </strong>
+<p>Deleting a coupon will lose the coupon from the entire system, including from the customer.</p>
+<strong>Log out</strong>
+<p> Secure port,on purpose that no one can take action without sign in the system.</p>
+<p>Located at the top right</p>
+  
+       <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+          
+
+</body>
+</html>

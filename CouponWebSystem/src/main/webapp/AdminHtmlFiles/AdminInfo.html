@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+            <div class="alert alert-info alert-dismissable fade in aStyle" 
+       ng-if="guideInfo"><label> Hi dear admin:</label>
+       
+     <br>
+  <strong>View all companies / clients:</strong>
+<p>Provides access to all their details including coupons</p>
+<p>You can update or delete a company or customer</p>
+<p>Update a company in the EMAIL and password fields</p>
+  <p> update customer in password field</p>
+  <strong>Note!</strong>
+  <p>Deleting a company or customer will result in loss of all their details including their coupons</p>
+  <p> without any possibility of return.</p>
+  <strong>Viewing a company or customer according to ID:</strong>
+  <p> You must enter an exact ID to get a specific company or customer</p>
+ <strong> Create a customer:</strong>
+<p> Do not enter a customer name that already exists in the system</p>
+<p> Password must be 4 characters or more</p>
+<strong> Create a company:</strong> 
+<p> Do not enter a company name that already exists in the system</p>
+<p> Password must be 4 characters or more</p>
+<p> Email must be in its form</p>
+  <strong>Sign out</strong>
+<p> Secure port,on purpose that no one can take action without sign in the system.</p>
+<p>Located at the top right</p>
+     
+      
+       <a ng-click="alertMessage()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+          
+
+</body>
+</html>

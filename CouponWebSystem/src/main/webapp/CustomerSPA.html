@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="customerApp">
+
+<head>
+
+
+<meta charset="windows-1255">
+
+      <link href="CssFiles/AlertStyle.css" rel="stylesheet" >
+      <link href="CssFiles/CustomerSPA.css" rel="stylesheet" >
+       <link href="CssFiles/Carusela.css" rel="stylesheet" >
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href="CssFiles/AlertStyle.css" rel="stylesheet" >
+   <link href="bootstrap.css" rel="stylesheet" >
+   <script type="text/javascript" src="./angular (1).js"></script>
+   <script src="./bootstrapForCustomer.js"></script>
+   <script src="./angular-route.js"></script>
+      <script src="./angular-ui-router.js"></script>
+      <script src="./CustomerServices/RoutForCustomer.js"></script>
+      <script src="./CustomerServices/CustomerServicesAPI.js"></script>
+       <script src="./CustomerServices/ErrorService.js"></script>
+      <script src="./CustomerControllers/AllTheCouponsInTheSystem.js"></script>
+      <script src="./CustomerControllers/MyPurchaseCoupons.js"></script>
+      <script src="./CustomerControllers/GetPurchasedCouponsByPrice.js"></script>
+      <script src="./CustomerControllers/GetPurchasedCouponsByType.js"></script>
+            <script src="./CustomerControllers/CustomerNameCtrl.js"></script>
+            <script src="./CustomerControllers/SignOut.js"></script>
+            <script src="./CustomerControllers/Messages.js"></script>
+             <script src="./CustomerControllers/Guide.js"></script>
+            
+      
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<title>Coup-ON Customer</title>
+<body class="bodyImg">
+
+   <div ng-controller="CustomerNameCtrl as ctrl">
+    <div ng-controller="RouteCtor as r"></div>
+   
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">Coup-ON</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a> {{ctrl.name}}</a></li>
+        
+      </ul> 
+     
+       <ul class="nav navbar-nav ">
+        
+         <li> <a role="button" ng-click="ctrl.clintInfo()">
+        <span class="glyphicon glyphicon-info-sign"></span>  User guide</a>
+          
+         </li>
+      </ul>  
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+         <li ng-controller="SginOutCtrl as ctrl"> <a role="button" ng-click="ctrl.signOut()"
+             href="http://localhost:8080/CouponWebSystem/Index.html">
+       <span class="glyphicon glyphicon-log-out "></span> Sign out</a>
+          
+         </li>
+      </ul>  
+    </div> 
+  </div> 
+</nav>
+   
+   
+                   <guide guide-info="ctrl.guideInfo" alert-message="ctrl.clintInfo()"></guide>   
+   
+         
+      </div>
+          
+          
+
+  
+  </div>
+                <h1 class="textColor" ng-controller="CustomerNameCtrl as ctrl">Hi {{ctrl.name}}</h1>
+                <h1 class="textColor">Welcome To Coup-ON</h1>
+         
+           <div class="col-md-6  " >
+       <div class="media">
+       <div class="media-left">
+        
+       <h3 id="top"> <a role="button" ui-sref="main" class="list-group-item active">Main Menu</a></h3>
+       <br>
+       <a role="button" ui-sref="allthecoupons" class="list-group-item">Click Here To See All The Coupons In Coupons World </a>
+       <br>
+       <a role="button" ui-sref="mypurchasecoupons" class="list-group-item">My Coupons</a>
+       <br>
+       <a role="button" ui-sref="getPurchasedCouponsByPrice" class="list-group-item">My Coupons Filtered By Price</a>
+       <br>
+       <a role="button" ui-sref="getPurchasedCouponsByType" class="list-group-item">My Coupons Filtered By Type</a>
+        </div>
+       </div>
+       </div>
+       <div class="affix">
+       
+      
+       </div>
+       
+       <br>
+       <br>
+       <div ui-view></div>
+</body></html>

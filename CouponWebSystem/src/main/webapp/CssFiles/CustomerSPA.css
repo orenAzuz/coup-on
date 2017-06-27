@@ -1,0 +1,50 @@
+@CHARSET "windows-1255";
+
+
+   img.imgSize{
+      
+      height: 215px;
+    width: 500px;
+   
+   }  
+
+.imgContainer {
+    position: relative;
+}  
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px; 
+}
+body.bodyImg {
+	
+	
+background-image:url('./Images/stockvault-online-shopping---devices-and-bags-with-copyspace185487.jpg');
+
+ background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+     background-size: 1500px 1000px;
+
+}
+
+.position{
+	
+	 position: fixed;
+	 margin:auto;
+}
+
+  .textColor{
+    text-shadow: 2px 2px 4px #000000;
+    color: #DAA520;
+   
+   }     
+   
+   h1 {
+   
+     text-shadow: 2px 2px 4px #000000;
+     text-align: center;
+     text-decoration: underline;
+     font-size: 500%;
+}

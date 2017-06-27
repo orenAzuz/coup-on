@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+            
+
+
+     
+            <div ng-controller="GetCompanyDetailsCtrl as ctrl">
+            
+             <messages err="ctrl.errorMessage"></messages>
+            
+                <div class="media-right">
+                 <h3> Company Details : </h3>
+                 
+                        <div>
+                          <a  class="list-group-item">
+			                <label>ID : </label>
+			                <strong >{{ctrl.company.id}}</strong></a>
+			                </div>
+			                <div>
+			                <a  class="list-group-item">
+			                <label>Name : </label>
+			                <strong >{{ctrl.company.compName}}</strong></a>
+			                </div>
+			                    <div>
+			                    <a  class="list-group-item">
+			                 <label > Email : </label>
+			                <strong >{{ctrl.company.email}}</strong>
+			               </a></div>
+			                <div>
+			                <a  class="list-group-item">
+			                  <label> Password : </label>
+			                <strong>{{ctrl.company.password}}</strong>
+			                </a>
+			                </div>
+                      </div>
+             </div>
+</body>
+</html>
